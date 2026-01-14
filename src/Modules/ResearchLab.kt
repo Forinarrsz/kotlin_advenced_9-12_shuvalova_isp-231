@@ -1,7 +1,6 @@
 package Modules
 
-import OutpostModule
-import ResourceManager
+import resources.ResourceManager
 class ResearchLab : OutpostModule("Исследовательская лаборатория") {
     override fun performAction(manager: ResourceManager) {
         val minerals = manager.get("Minerals")

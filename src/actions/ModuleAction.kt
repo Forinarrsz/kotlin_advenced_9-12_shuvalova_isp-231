@@ -1,6 +1,6 @@
-package Modules
+package actions
 
-import ResourceManager
+import resources.ResourceManager
 
 interface ModuleAction {
     fun execute(manager: ResourceManager)

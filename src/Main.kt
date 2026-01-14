@@ -1,5 +1,7 @@
 import Modules.EnergyGenerator
 import Modules.ResearchLab
+import resources.OutpostResource
+import resources.ResourceManager
 
 fun main(){
     val manager = ResourceManager()

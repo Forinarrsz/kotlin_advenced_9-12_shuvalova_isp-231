@@ -1,3 +1,5 @@
+package example
+
 interface Movable{
     var speed: Int
     val model: String
@@ -20,7 +22,7 @@ interface AudioPlayable {
     fun play() = println("Play Audio")
 }
 
-class MediaPlayer: VideoPlayable,AudioPlayable {
+class MediaPlayer: VideoPlayable, AudioPlayable {
     override fun play() {
         println("start playing")
         super<VideoPlayable>.play()
