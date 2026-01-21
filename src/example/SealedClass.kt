@@ -18,6 +18,7 @@ fun handleResult(result: NetworkResult) {
         }
     }
 }
+//
 
 fun main(){
     val success = NetworkResult.Success("Данные получены")
