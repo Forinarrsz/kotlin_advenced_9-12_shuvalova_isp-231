@@ -18,7 +18,22 @@ fun handleResult(result: NetworkResult) {
         }
     }
 }
-//
+sealed class OrderStatus {
+    object Created : OrderStatus()
+    object  Paid : OrderStatus()
+    object Shipped : OrderStatus()
+    data class Cancelled(val reason: String) :OrderStatus()
+
+}
+
+fun handleOrder(status: OrderStatus) {
+    when(status) {
+        OrderStatus.Created -> println("заказ создан")
+        OrderStatus.Paid -> println("Заказ оплачен")
+        OrderStatus.Shipped -> println("Заказ отправлен")
+        is OrderStatus.Cancelled -> println("отменен: ${status.reason}")
+    }
+}
 
 fun main(){
     val success = NetworkResult.Success("Данные получены")
@@ -28,4 +43,9 @@ fun main(){
     handleResult(success)
     handleResult(error)
     handleResult(loading)
+
+    handleOrder(OrderStatus.Created)
+    handleOrder(OrderStatus.Paid)
+    handleOrder(OrderStatus.Shipped)
+    handleOrder(OrderStatus.Cancelled("товара нет на складе"))
 }
