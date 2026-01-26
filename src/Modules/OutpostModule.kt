@@ -4,7 +4,7 @@ import resources.ResourceManager
 
 abstract class OutpostModule (val name: String,
                               var level: Int = 1)
-{ abstract fun performAction(manager: ResourceManager)
+{ abstract fun performAction(manager: ResourceManager): ModuleResult
     fun upgrade() {
         level++
         println("$name улучшен до уровня $level")
